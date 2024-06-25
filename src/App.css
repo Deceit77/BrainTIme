@@ -1,0 +1,181 @@
+/* General styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1c1c1c;
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  background-color: #2a2a2a;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+  color: #f7c6c7;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 2em;
+  animation: slideInFromLeft 1s ease-in-out;
+}
+
+p {
+  color: #d1d1d1;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  width: calc(100% - 24px);
+  animation: popIn 0.5s ease-in-out;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #f7c6c7;
+  color: #1c1c1c;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  animation: bounceIn 1s ease-in-out;
+}
+
+button:hover {
+  background-color: #e0a7a7;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-left: 10px;
+  color: #d1d1d1;
+  font-size: 1.2em; /* Increased font size for better readability */
+}
+
+input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f7c6c7;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+input[type="radio"]:checked::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background-color: #f7c6c7;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"]:hover {
+  transform: scale(1.2);
+}
+
+.question {
+  margin-bottom: 20px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.question-text {
+  color: #f7c6c7;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.Copyright {
+  color: #f7c6c7;
+  margin-top: 20px;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .App {
+    padding: 10px;
+    border-radius: 0;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 20px);
+  }
+}
